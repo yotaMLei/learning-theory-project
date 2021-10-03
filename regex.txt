@@ -1,0 +1,1 @@
+Dataset: MNIST_23\nOptimizer:  SGD\n.*\n.*\n   learning rate decay = 2\n   threshold = 0.5

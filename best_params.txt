@@ -1,0 +1,74 @@
+MOVED TO THE WORD DOCUMENT !!!!!!!!!!!!!!
+
+order of datasets: [MNIST_01, MNIST_23, MNIST_45]
+
+IMPORTANT NOTE: the shuffling of the datasets changes each run, so the number of iterations till convergence for
+the SGD mean value over the number of runs I made (about 10 runs)
+
+#########################################################################
+#                Part A                                                 #
+#########################################################################
+
+################ Preprocessing = Scaler only (No normalization) #########
+
+***** threshold = 0.5 *****
+GD:     learning rate : [   1,   1,   1]  |  learning rate decay : [ 0, 0, 2]  |  Num of iterations : [   2,    3,    3]
+ConsGD: learning rate : [   1,   1,   1]  |  learning rate decay : [ 0, 0, 0]  |  Num of iterations : [   2,    3,    3]
+RegGD:  learning rate : [   1,   1,   1]  |  learning rate decay : [ 0, 0, 0]  |  Num of iterations : [   1,    2,    2]
+SGD:    learning rate : [   1,   4, 0.7]  |  learning rate decay ; [ 0, 0, 0]  |  Num of iterations : [   2,   12,   14]
+** lambda = [ 0.1, 0.1, 0.1]
+** B      = [   1,   1,   1]
+
+
+
+
+
+
+***** threshold = 0.2 *****
+GD:     learning rate : [ 0.5, 0.5, 0.5]  |  learning rate decay : [ 0, 0, 0]  |  Num of iterations : [   2,    4,    3]
+ConsGD: learning rate : [   1,   1,   1]  |  learning rate decay : [ 2, 2, 2]  |  Num of iterations : [   2,    4,    3]
+RegGD:  learning rate : [   1,   1,   1]  |  learning rate decay : [ 0, 0, 0]  |  Num of iterations : [   1,    4,    2]
+SGD:    learning rate : [   1, 0.1, 0.1]  |  learning rate decay : [ 1, 2, 2]  |  Num of iterations : [   6,  238,  124]
+** lambda = [ 0.1, 0.1, 0.1]
+** B      = [   1,   1,   1]
+
+
+    empirical_learning_rates = np.array(([0.5, 0.5, 0.5],    # GD learning rates
+                                         [1, 1, 1],       # consGD learning rates
+                                         [1, 1, 1],                # regGD learning rates
+                                         [1, 0.1, 0.1]))               # SGD learning rates
+    empirical_B_vals = np.array([1, 1, 1])             # property of the data set
+    empirical_lambdas_reg = np.array([1, 1, 1]) * 0.1  # used only by reg_GD optimizer
+    empirical_learning_rate_decays = np.array([0, 2, 0, 1])  # learning rate decay : 0 = constant learning rate,
+
+
+
+
+
+
+
+
+***** threshold = 0.1 *****
+GD:     learning rate : [   1,   1,   1]  |  learning rate decay : [ 0, 0, 0]  |  Num of iterations : [   2,    8,    6]
+ConsGD: learning rate : [   1,   1,   1]  |  learning rate decay : [ 0, 1, 1]  |  Num of iterations : [   2,    4,    4]
+RegGD:  learning rate : [   1,   1,   1]  |  learning rate decay : [ 0, 0, 0]  |  Num of iterations : [   1,    5,    4]
+SGD:    learning rate : [  10,   2, 1.3]  |  learning rate decay : [ 2, 2, 2]  |  Num of iterations : [  29, 2989, 3789]
+** lambda = [    ,    ,    ]
+** B      = [    ,    ,    ]
+
+
+
+
+
+
+
+
+***** threshold = 0.1 *****
+GD:     learning rate : [    ,    ,    ]  |  learning rate decay : [  ,  ,  ]  |  Num of iterations : [    ,     ,     ]
+ConsGD: learning rate : [    ,    ,    ]  |  learning rate decay : [  ,  ,  ]  |  Num of iterations : [    ,     ,     ]
+RegGD:  learning rate : [    ,    ,    ]  |  learning rate decay : [  ,  ,  ]  |  Num of iterations : [    ,     ,     ]
+SGD:    learning rate : [    ,    ,    ]  |  learning rate decay : [  ,  ,  ]  |  Num of iterations : [    ,     ,     ]
+** lambda = [    ,    ,    ]
+** B      = [    ,    ,    ]
+
+########################################################################
